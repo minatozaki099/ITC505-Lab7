@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Lib Adventure - Lab 7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎭 Mad Lib Adventure Generator 🎭</h1>
+            <p class="subtitle">Fill in the blanks to create a hilarious story!</p>
+        </header>
+
+        <main>
+            <form action="/ITC505/lab-7" method="POST" id="madLibForm">
+                <div class="form-group">
+                    <label for="adjective1">Adjective (describing word):</label>
+                    <input type="text" id="adjective1" name="adjective1" 
+                           placeholder="e.g., silly, enormous, sparkly" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pluralNoun">Plural Noun (more than one thing):</label>
+                    <input type="text" id="pluralNoun" name="pluralNoun" 
+                           placeholder="e.g., bananas, robots, unicorns" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="verb">Verb (action word):</label>
+                    <input type="text" id="verb" name="verb" 
+                           placeholder="e.g., jumping, dancing, flying" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="adjective2">Another Adjective:</label>
+                    <input type="text" id="adjective2" name="adjective2" 
+                           placeholder="e.g., purple, mysterious, fuzzy" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="noun">Noun (a person, place, or thing):</label>
+                    <input type="text" id="noun" name="noun" 
+                           placeholder="e.g., pizza, dragon, spaceship" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="place">Place:</label>
+                    <input type="text" id="place" name="place" 
+                           placeholder="e.g., the moon, a treehouse, Paris" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Create My Story!</button>
+            </form>
+
+            <div class="addendum">
+                <h2>Addendum</h2>
+                
+                <h3>Development Process</h3>
+                <p>This Mad Lib application was built using ExpressJS to handle HTTP POST requests from an HTML form. The development began by planning a creative story template with six distinct word slots: two adjectives, a plural noun, a verb, a regular noun, and a place. I structured the project with separation of concerns, creating distinct HTML, CSS, and JavaScript files for better maintainability and organization.</p>
+                
+                <h3>Design Choices</h3>
+                <p>I chose a vibrant, playful aesthetic to match the entertaining nature of Mad Libs. The purple gradient background creates visual interest while maintaining readability. The form uses a card-based layout with generous padding and rounded corners to create a modern, approachable interface. Each input field features clear labels, helpful placeholder text with examples, and smooth focus transitions to enhance user experience.</p>
+                
+                <h3>Technical Implementation</h3>
+                <p>The server-side code uses Express's urlencoded middleware to parse form data from POST requests. When users submit the form, the server validates that all fields contain data before processing. If validation fails, users see a styled error page. Upon successful submission, the server performs string interpolation to insert user inputs into the story template and returns a beautifully formatted result page with a link back to the form.</p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>Last updated: 
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+    
+    <script type="text/javascript">
+         var x = document.lastModified;
+         document.getElementById('lastModified').textContent = x;
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
